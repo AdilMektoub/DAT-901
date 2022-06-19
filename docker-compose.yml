@@ -1,5 +1,12 @@
-version: '2.2'
+version: "3.6"
 services:
+  match:
+    build:
+      context: data
+    volumes:
+      - ~/.config:/root/.config
+    environment:
+      - ENV=dev
   es01:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.15.2
     container_name: es01
